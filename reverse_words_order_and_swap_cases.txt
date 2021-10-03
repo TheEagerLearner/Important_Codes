@@ -1,0 +1,20 @@
+def reverse_words_order_and_swap_cases(sentence):
+    caps_store = []
+    letter_store = [str(i) for i in sentence]
+    for a in letter_store:
+        if a.isupper():
+            caps_store.append(a.lower())
+        if a.islower():
+            caps_store.append(a.upper())
+        if a.isspace():
+            caps_store.append(" ")
+    final_store = ''.join([str(elem) for elem in caps_store])
+    words = final_store.split(' ')
+    output = ' '.join(reversed(words))
+    return output
+
+def main():
+    sentence = str(input("Enter a string : "))
+    print(reverse_words_order_and_swap_cases(sentence))
+
+main()
